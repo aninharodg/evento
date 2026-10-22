@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.container {
+    max-width: 650px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+section {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+h2 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+input, select, button {
+    padding: 8px;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.btn-edit {
+    background-color: #ffc107;
+    color: #212529;
+    padding: 5px 8px;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-right: 4px;
+}
+
+.btn-edit:hover {
+    background-color: #e0a800;
+}
+
+.btn-del {
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 8px;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.btn-del:hover {
+    background-color: #c82333;
+}
+
+.btn-cancelar {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-cancelar:hover {
+    background-color: #5a6268;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+    font-size: 0.95rem;
+}
+
+th {
+    background-color: #eee;
+}

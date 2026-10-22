@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Festival Experiência Viva</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Festival Experiência Viva</h1>
+
+        <!-- 1. PARTICIPANTES -->
+        <section>
+            <h2>Participantes</h2>
+            <form id="formParticipante">
+                <input type="hidden" id="participante_id_edit">
+                <input type="text" id="nome" placeholder="Nome" required>
+                <input type="email" id="email" placeholder="E-mail" required>
+                <input type="text" id="telefone" placeholder="Telefone" required>
+                <button type="submit" id="btnSalvarParticipante">Cadastrar Participante</button>
+                <button type="button" id="btnCancelarParticipante" class="btn-cancelar" style="display: none;" onclick="cancelarEdicaoParticipante()">Cancelar</button>
+            </form>
+
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Telefone</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaParticipantes">
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 2. ATIVIDADES -->
+        <section>
+            <h2>Atividades</h2>
+            <form id="formAtividade">
+                <input type="hidden" id="atividade_id_edit">
+                <input type="text" id="titulo" placeholder="Título" required>
+                <input type="text" id="descricao" placeholder="Descrição" required>
+                <input type="number" id="qtd_vagas" placeholder="Quantidade de Vagas" required>
+                <input type="datetime-local" id="data_atvd" required>
+                <button type="submit" id="btnSalvarAtividade">Cadastrar Atividade</button>
+                <button type="button" id="btnCancelarAtividade" class="btn-cancelar" style="display: none;" onclick="cancelarEdicaoAtividade()">Cancelar</button>
+            </form>
+
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Vagas Disponíveis</th>
+                        <th>Data</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaAtividades">
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 3. INSCRIÇÃO -->
+        <section>
+            <h2>Realizar Inscrição</h2>
+            <form id="formInscricao">
+                <input type="hidden" id="inscricao_id_edit">
+                <select id="selectParticipante" required>
+                    <option value="">Selecione o Participante</option>
+                </select>
+                <select id="selectAtividade" required>
+                    <option value="">Selecione a Atividade</option>
+                </select>
+                <button type="submit" id="btnSalvarInscricao">Inscrever</button>
+                <button type="button" id="btnCancelarInscricao" class="btn-cancelar" style="display: none;" onclick="cancelarEdicaoInscricao()">Cancelar</button>
+            </form>
+        </section>
+
+        <!-- 4. LISTA GERAL DE INSCRIÇÕES -->
+        <section>
+            <h2>Lista Geral de Inscrições</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Participante</th>
+                        <th>Atividade</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaInscricoes">
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

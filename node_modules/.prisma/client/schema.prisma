@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model atividades {
+  id         Int          @id @default(autoincrement())
+  titulo     String       @db.VarChar(120)
+  descricao  String       @db.Text
+  qtd_vagas  Int
+  data_atvd  DateTime     @db.DateTime(0)
+  inscricoes inscricoes[]
+}
+
+model inscricoes {
+  id              Int           @id @default(autoincrement())
+  participante_id Int
+  atividade_id    Int
+  data_inscricao  DateTime?     @default(now()) @db.DateTime(0)
+  participantes   participantes @relation(fields: [participante_id], references: [id], onDelete: Cascade, onUpdate: Restrict, map: "inscricoes_ibfk_1")
+  atividades      atividades    @relation(fields: [atividade_id], references: [id], onUpdate: Restrict, map: "inscricoes_ibfk_2")
+
+  @@unique([participante_id, atividade_id], map: "participante_atividade")
+  @@index([atividade_id], map: "atividade_id")
+}
+
+model participantes {
+  id         Int          @id @default(autoincrement())
+  nome       String       @db.VarChar(120)
+  email      String       @unique(map: "email") @db.VarChar(120)
+  telefone   String       @db.VarChar(20)
+  inscricoes inscricoes[]
+}
